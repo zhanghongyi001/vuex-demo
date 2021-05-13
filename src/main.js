@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
-
+import Vuex from 'vuex'
+// import store from './store'
+import { modules } from '@/store'
+Vue.use(Vuex)
 Vue.config.productionTip = false
-
+const store = new Vuex.Store(modules);
 new Vue({
   router,
   store,
