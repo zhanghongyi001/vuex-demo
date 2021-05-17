@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Vuex from 'vuex'
-// import store from './store'
+import 'amfe-flexible/index.js'
 import { modules } from '@/store'
 Vue.use(Vuex)
 Vue.config.productionTip = false

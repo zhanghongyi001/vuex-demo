@@ -1,30 +1,24 @@
 <template>
   <div class="App">
-    <!-- <my-addition></my-addition>
-    <p>1111111--------------------------2------------</p>
-    <my-subtraction></my-subtraction> -->
-    <router-view />
+    <!-- <keep-alive>
+
+    </keep-alive> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import { getQueryString } from './common/common.js'
 import { mapActions } from 'vuex'
-import Addition from './components/Addition'
-import subtraction from './components/subtraction'
-
 export default {
-  components: {
-    'my-addition': Addition,
-    'my-subtraction': subtraction,
-  },
   created() {
     this.getUrl()
   },
   methods: {
     ...mapActions(['getUrlpage']),
     getUrl() {
-      const { query } = this.$route
-      this.getUrlpage(query)
+      var myParam = getQueryString(location.href)
+      this.getUrlpage(myParam)
     },
   },
 }
